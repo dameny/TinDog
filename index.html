@@ -221,14 +221,18 @@
     crossorigin="anonymous"></script>
 
   <script>
+    /**
+     * Normalizes the height of the Bootstrap carousel to the item with the greatest height. 
+     *
+     * The carousel does not automatically normalize its size so this can cause the other
+     * elements in the page to shift when the carousel changes items.
+     */
     function normalizeCarouselHeight() {
       const items = document.getElementsByClassName('carousel-item');
 
       function normalizeHeights() {
         const heights = [];
         let tallest;
-
-        console.log(items);
 
         for (let item of items) {
           item.style.minHeight = `0`;
@@ -242,10 +246,8 @@
           }
           heights.push(height);
         }
-        console.log("heights:", heights);
 
         tallest = Math.max.apply(null, heights);
-        console.log("tallest:", tallest);
 
         for (let item of items) {
           item.style.minHeight = `${tallest}px`;
