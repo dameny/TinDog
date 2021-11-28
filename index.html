@@ -93,13 +93,13 @@
           <div class="carousel-item active container-fluid">
             <h2 class="testimonial-text">I no longer have to sniff other dogs for love. I've found the nicest Corgi on
               TinDog. Woof.</h2>
-            <img class="testimonial-image" src="images/dog-img.jpg" alt="dog-profile">
+            <img class="testimonial-image" src="images/dog-img.jpg" alt="Pebbles, the dog">
             <em>Pebbles, New York</em>
           </div>
           <div class="carousel-item container-fluid">
             <h2 class="testimonial-text">My dog used to be so lonely, but with TinDog's help, they've found the love of
               their life. I think.</h2>
-            <img class="testimonial-image" src="images/lady-img.jpg" alt="lady-profile">
+            <img class="testimonial-image" src="images/lady-img.jpg" alt="Beverly, an owner">
             <em>Beverly, Illinois</em>
           </div>
         </div>
@@ -118,10 +118,10 @@
 
   <section class="colored-section press" id="press">
     <div class="container-fluid align-items-center">
-      <img class="press-logo" src="images/techcrunch.png" alt="tc-logo">
-      <img class="press-logo" src="images/tnw.png" alt="tnw-logo">
-      <img class="press-logo" src="images/bizinsider.png" alt="biz-insider-logo">
-      <img class="press-logo" src="images/mashable.png" alt="mashable-logo">
+      <img class="press-logo" src="images/techcrunch.png" alt="Tech Crunch logo">
+      <img class="press-logo" src="images/tnw.png" alt="TNW logo">
+      <img class="press-logo" src="images/bizinsider.png" alt="Business Insider logo">
+      <img class="press-logo" src="images/mashable.png" alt="Mashable logo">
     </div>
   </section>
 
@@ -220,47 +220,8 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
 
-  <script>
-    /**
-     * Normalizes the height of the Bootstrap carousel to the item with the greatest height. 
-     *
-     * The carousel does not automatically normalize its size so this can cause the other
-     * elements in the page to shift when the carousel changes items.
-     */
-    function normalizeCarouselHeight() {
-      const items = document.getElementsByClassName('carousel-item');
+  <script src="normalize.js" charset="UTF-8">
 
-      function normalizeHeights() {
-        const heights = [];
-        let tallest;
-
-        for (let item of items) {
-          item.style.minHeight = `0`;
-
-          let height = item.clientHeight;
-
-          if (height === 0) {
-            item.classList.toggle("active");
-            height = item.clientHeight;
-            item.classList.toggle("active");
-          }
-          heights.push(height);
-        }
-
-        tallest = Math.max.apply(null, heights);
-
-        for (let item of items) {
-          item.style.minHeight = `${tallest}px`;
-        }
-      }
-
-      normalizeHeights();
-
-      window.addEventListener('resize', normalizeHeights);
-      window.addEventListener('orientationchange', normalizeHeights);
-    }
-
-    normalizeCarouselHeight();
   </script>
 </body>
 
